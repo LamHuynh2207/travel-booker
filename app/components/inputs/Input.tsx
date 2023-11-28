@@ -50,8 +50,8 @@ const Input: React.FC<InputProps> = ({
         className={`
           peer
           w-full
-          p-4
-          pt-6 
+          p-2
+          pt-3 
           font-light 
           bg-white 
           border-2
