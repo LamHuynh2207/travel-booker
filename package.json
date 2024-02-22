@@ -23,6 +23,7 @@
     "next-auth": "^4.23.1",
     "next-cloudinary": "^4.20.0",
     "next-swagger-doc": "^0.4.0",
+    "nextjs-routes-docs": "^0.0.61",
     "query-string": "^8.1.0",
     "react": "18.2.0",
     "react-date-range": "^1.4.0",

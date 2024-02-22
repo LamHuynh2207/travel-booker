@@ -7,6 +7,30 @@ interface IParams {
   listingId?: string;
 }
 
+/**
+ * @swagger
+ * /favorites/{listingId}:
+ *   post:
+ *     summary: Add a listing to favorites
+ *     description: Add a listing to favorites
+ *     parameters:
+ *       - in: path
+ *         name: listingId
+ *         required: true
+ *         schema:
+ *           type: string
+ *         description: The ID of the listing to add to favorites
+ *     responses:
+ *       200:
+ *         description: Successful operation
+ *         content:
+ *           application/json:
+ *       401:
+ *         description: Unauthorized
+ *       500:
+ *         description: Internal server error
+ */
+
 export async function POST(request: Request, { params }: { params: IParams }) {
   const currentUser = await getCurrentUser();
 
@@ -35,6 +59,30 @@ export async function POST(request: Request, { params }: { params: IParams }) {
 
   return NextResponse.json(user);
 }
+
+/**
+ * @swagger
+ * /favorites/{listingId}:
+ *   delete:
+ *     summary: Remove a listing from favorites
+ *     description: Remove a listing from favorites
+ *     parameters:
+ *       - in: path
+ *         name: listingId
+ *         required: true
+ *         schema:
+ *           type: string
+ *         description: The ID of the listing to remove from favorites
+ *     responses:
+ *       200:
+ *         description: Successful operation
+ *         content:
+ *           application/json:
+ *       401:
+ *         description: Unauthorized
+ *       500:
+ *         description: Internal server error
+ */
 
 export async function DELETE(
   request: Request,
