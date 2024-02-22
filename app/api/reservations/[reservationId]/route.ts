@@ -7,6 +7,34 @@ interface IParams {
   reservationId?: string;
 }
 
+/**
+ * @swagger
+ * /reservations/{reservationId}:
+ *   delete:
+ *     summary: Cancel a reservation
+ *     description: Cancel a reservation by its ID for the authenticated user
+ *     parameters:
+ *       - in: path
+ *         name: reservationId
+ *         required: true
+ *         schema:
+ *           type: string
+ *         description: The ID of the reservation to cancel
+ *     responses:
+ *       200:
+ *         description: Successful cancellation
+ *         content:
+ *           application/json:
+ *       401:
+ *         description: Unauthorized
+ *       403:
+ *         description: Forbidden (user does not own the reservation)
+ *       404:
+ *         description: Reservation not found
+ *       500:
+ *         description: Internal server error
+ */
+
 export async function DELETE(
   request: Request,
   { params }: { params: IParams }
